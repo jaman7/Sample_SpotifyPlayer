@@ -1,0 +1,57 @@
+.album {
+	&-view {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+		padding: 0;
+	}
+
+	&-item {
+		padding: 10px;
+		list-style-type: none;
+		overflow: hidden;
+		flex-basis: 25%;
+		flex-wrap: wrap;
+		cursor: pointer;
+
+		@include mediaa(maxlg) {
+			flex-basis: 25%;
+		}
+
+		@include mediaa(maxmd) {
+			flex-basis: 33.3333333333333%;
+		}
+
+		@include mediaa(maxsm) {
+			flex-basis: 50%;
+		}
+	}
+
+	&-image {
+		position: relative;
+
+		& img {
+			width: 100%;
+
+			&:hover {
+				opacity: 0.3;
+			}
+		}
+	}
+
+	&-details {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-size: 14px;
+
+		&__album-name {
+			margin-top: 5px;
+			@include fluid-type(1px, 5px, margin-bottom);
+		}
+
+		&__artist-name {
+			color: rgb(179, 179, 179);
+			@include fluid-type(1px, 5px, margin-bottom);
+		}
+	}
+}

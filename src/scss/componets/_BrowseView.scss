@@ -1,0 +1,50 @@
+.browse-view {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	padding: 0;
+
+	& .category-item {
+		padding: 10px;
+		list-style-type: none;
+		line-height: 28px;
+		font-size: 14px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		flex-basis: 20%;
+		cursor: pointer;
+
+		@include mediaa(maxlg) {
+			flex-basis: 25%;
+		}
+
+		@include mediaa(maxmd) {
+			flex-basis: 33.3333333333333%;
+		}
+
+		@include mediaa(maxsm) {
+			flex-basis: 50%;
+		}
+	}
+
+	& .category-image {
+		position: relative;
+
+		& img {
+			width: 100%;
+
+			&:hover {
+				opacity: 0.3;
+			}
+		}
+	}
+
+	& .category-name {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 100%);
+		font-size: 18px;
+	}
+}

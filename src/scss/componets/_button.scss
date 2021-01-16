@@ -1,0 +1,20 @@
+.pause-play-btn {
+	background: #1db954;
+	color: #fff;
+	border: 0;
+	border-radius: 2em;
+	padding: 0.5rem 2rem;
+	// width: 100px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	outline: none;
+	font-weight: 600;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		opacity: 0.8;
+		outline: 0;
+	}
+}

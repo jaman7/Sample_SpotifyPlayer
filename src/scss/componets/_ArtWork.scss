@@ -1,0 +1,8 @@
+.album-artwork {
+	width: 100%;
+	&-container {
+		max-width: 15rem;
+		position: absolute;
+		bottom: 90px;
+	}
+}

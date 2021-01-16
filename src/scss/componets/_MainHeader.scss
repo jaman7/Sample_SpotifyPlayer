@@ -1,0 +1,97 @@
+.main-header {
+	position: relative;
+
+	@include mediaa(maxxsm) {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	& img {
+		max-height: 230px;
+
+		@include mediaa(maxlg) {
+			max-height: 170px;
+		}
+
+		@include mediaa(maxsm) {
+			max-height: 140px;
+		}
+	}
+
+	& .info {
+		padding-left: 20px;
+
+		&-text {
+			letter-spacing: 1px;
+			font-size: 1rem;
+
+			@include mediaa(maxmd) {
+				margin-bottom: 2px;
+			}
+		}
+
+		&-title {
+			color: #fff;
+			@include fluid-type(2rem, 3rem);
+			@include fluid-type(0, 3px, padding-top);
+			@include fluid-type(0, 5px, padding-bottom);
+			@include fluid-type(1px, 5px, margin-bottom);
+		}
+
+		&-album {
+			color: #646464;
+			font-weight: 400;
+			font-size: 1.75rem;
+		}
+
+		&-createdby {
+			font-size: 13px;
+			color: #aaa;
+			padding: 8px 0;
+			@include fluid-type(2px, 8px, margin-bottom);
+
+			&__lighter-text {
+				color: #fff;
+			}
+		}
+	}
+
+	&__title {
+		@include fluid-type(2rem, 3rem);
+		padding: 3px 0 5px;
+		color: #fff;
+	}
+
+	& .browse-headers {
+		display: flex;
+
+		& p {
+			color: rgb(179, 179, 179);
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin: 0 20px;
+			cursor: pointer;
+
+			&:first-child {
+				margin: 0 20px 0 0;
+			}
+		}
+
+		& .active {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: 35px;
+				left: 50%;
+				top: 22px;
+				border-bottom: 2px solid #1db954;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}

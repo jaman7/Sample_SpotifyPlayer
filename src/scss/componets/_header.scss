@@ -1,0 +1,55 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 10vh;
+	width: 100%;
+	@include padding(1rem 4rem);
+
+	@include mediaa(maxsm) {
+		@include padding(1rem);
+	}
+
+	& .user-details {
+		display: flex;
+		align-items: center;
+
+		& .user-image {
+			max-height: 35px;
+			padding: 0.25rem;
+			margin-right: 0.2rem;
+		}
+
+		& p {
+			margin-bottom: 0;
+		}
+	}
+
+	& .track-search-container {
+		& input {
+			background: #fff;
+			width: auto;
+			border-radius: 10px;
+			border: 0;
+			padding: 4px 4px 4px 10px;
+			outline: none;
+
+			@include mediaa(maxmd) {
+				max-width: 150px;
+			}
+		}
+
+		& button {
+			background: none;
+			border: 0;
+			outline: none;
+		}
+
+		& .search {
+			margin-left: 5px;
+			cursor: pointer;
+			color: #fff;
+			font-size: 15px;
+		}
+	}
+}

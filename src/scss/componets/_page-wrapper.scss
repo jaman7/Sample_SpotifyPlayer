@@ -1,0 +1,8 @@
+.page-wrapper {
+	min-width: 100vw;
+
+	@include mediaa(minmd) {
+		min-width: 0;
+		width: 100%;
+	}
+}

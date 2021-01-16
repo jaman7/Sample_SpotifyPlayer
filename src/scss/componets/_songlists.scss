@@ -1,0 +1,304 @@
+.song-view {
+	& .song-header {
+		display: flex;
+		border-bottom: 1px solid #666;
+		padding-bottom: 6px;
+		margin-top: 20px;
+
+		& p {
+			text-transform: uppercase;
+			font-size: 12px;
+			color: #ccc;
+			padding: 0 8px;
+			margin: 0;
+		}
+
+		&-title {
+			width: 250px;
+			margin-left: 60px;
+		}
+
+		&-artist {
+			width: 180px;
+		}
+
+		&-album {
+			width: 210px;
+		}
+
+		&-length {
+			width: 60px;
+
+			& i {
+				font-size: 17px;
+				color: #ccc;
+			}
+		}
+	}
+
+	& .user-song-item {
+		list-style-type: none;
+		border-bottom: 1px solid rgb(59, 2, 2);
+		display: flex;
+		line-height: 40px;
+		font-size: 14px;
+		cursor: pointer;
+
+		&:hover {
+			background: rgb(51, 51, 51);
+
+			& .play-song {
+				opacity: 1;
+			}
+		}
+
+		&.active {
+			background: rgb(51, 51, 51);
+			& .play-song {
+				opacity: 1;
+			}
+		}
+	}
+
+	& p {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding: 0 8px;
+		line-height: 42px;
+		margin: 0;
+	}
+
+	& .play-song {
+		width: 30px;
+		opacity: 0;
+		text-align: center;
+
+		& i {
+			font-size: 25px;
+			position: relative;
+			top: 5px;
+			color: #ccc;
+			cursor: pointer;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+
+	& .song-title {
+		width: 250px;
+	}
+
+	& .song-artist {
+		width: 180px;
+	}
+
+	& .song-album {
+		width: 210px;
+	}
+
+	& .song-length {
+		width: 60px;
+	}
+
+	& .add-song {
+		cursor: pointer;
+		z-index: 1;
+		width: 28px;
+		color: #fff;
+
+		& i {
+			font-size: 20px;
+		}
+	}
+}
+
+$breakpoint: 750px;
+$heading-color: #43bac0;
+
+.cln {
+	width: 25%;
+}
+
+.cmn {
+	width: 19%;
+}
+
+.csn {
+	width: 3%;
+}
+
+.column-heading {
+	& p {
+		margin: 0;
+		padding: 0 8px;
+		color: #ccc;
+		text-transform: uppercase;
+		font-size: 12px;
+	}
+}
+
+// /* Apply styles
+// ================================== */
+.table {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+
+	&-row {
+		width: 100%;
+		display: flex;
+		margin-top: 20px;
+		padding-bottom: 6px;
+		border-bottom: 1px solid #666;
+	}
+
+	& .item {
+		border-bottom: 1px solid #3b0202;
+
+		cursor: pointer;
+		margin: 0;
+		padding-bottom: 0;
+		color: #fff;
+
+		&:hover {
+			background: rgb(51, 51, 51);
+
+			& .play-song {
+				opacity: 1;
+			}
+		}
+
+		&.active {
+			background: rgb(51, 51, 51);
+			& .play-song {
+				opacity: 1;
+			}
+		}
+
+		& p {
+			overflow: hidden;
+			margin: 0;
+			padding: 0.8rem 8px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			@include fluid-type(12px, 14px);
+
+			@include mediaa(maxsm) {
+				padding: 0.5rem 8px;
+			}
+		}
+
+		& .play-song {
+			width: 30px;
+			opacity: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			& i {
+				font-size: 25px;
+				color: #ccc;
+				cursor: pointer;
+
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+
+		& .add-song {
+			cursor: pointer;
+			z-index: 1;
+			width: 28px;
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			& i {
+				font-size: 20px;
+			}
+		}
+	}
+
+	& .Rtable-cell {
+		flex-grow: 1;
+		// padding: 0.8em 1.2em;
+		overflow: hidden; // Or flex might break
+		list-style: none;
+	}
+}
+
+// // /* Responsive
+// // ==================================== */
+// @media all and (max-width: $breakpoint) {
+// 	.is-striped {
+// 		background-color: white;
+// 	}
+
+// 	.Rtable--collapse {
+// 		display: block;
+// 		width: 100%;
+// 		padding: 1em;
+// 		box-shadow: none;
+
+// 		.Rtable-row {
+// 			box-sizing: border-box;
+// 			width: 100%;
+// 			display: flex;
+// 			flex-wrap: wrap;
+// 			margin-bottom: 2em;
+// 			box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+
+// 			.Rtable-cell {
+// 				width: 100% !important;
+// 				display: flex;
+// 				align-items: center;
+
+// 				.Rtable-cell--heading {
+// 					display: inline-block;
+// 					flex: 1;
+// 					max-width: 120px;
+// 					min-width: 120px;
+// 					color: $heading-color;
+// 					font-weight: 700;
+// 					border-right: 1px solid #ccc;
+// 					margin-right: 1em;
+// 				}
+
+// 				.Rtable-cell--content {
+// 					flex: 2;
+// 					padding-left: 1em;
+// 				}
+// 			}
+// 		}
+
+// 		.topic-cell {
+// 			background-color: $heading-color;
+// 			color: white;
+// 			font-weight: 700;
+// 			order: -1;
+
+// 			.Rtable-cell--content {
+// 				padding-left: 0 !important;
+// 			}
+// 		}
+
+// 		.Rtable-row--head {
+// 			display: none;
+// 		}
+// 	}
+// }
+
+// // // Non-Flex modernizer fallback
+// .no-flexbox .Rtable {
+// 	display: block;
+
+// 	&.Rtable-cell {
+// 		width: 100%;
+// 	}
+// }

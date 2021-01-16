@@ -1,0 +1,117 @@
+.sidebar {
+	min-height: 100vh;
+	margin-left: -200px;
+	transition: margin 0.25s ease-out;
+	// border-right: 1px solid rgb(24, 24, 24) !important;
+	background-color: #212121;
+	color: #fff;
+	width: 200px;
+	position: relative;
+
+	@include mediaa(maxsm) {
+		transition: all 0.5s ease-in-out;
+	}
+
+	&.toggled {
+		margin-left: 0;
+		@include mediaa(maxsm) {
+			margin-left: 0;
+			left: 0;
+		}
+	}
+
+	@include mediaa(maxsm) {
+		position: fixed;
+		max-width: 200px;
+		z-index: 9999;
+	}
+
+	& .custom-menu {
+		display: inline-block;
+		position: absolute;
+		top: 18px;
+		right: 0;
+		margin-right: -24px;
+		transition: 0.3s;
+
+		@include mediaa(maxsm) {
+			top: 80px;
+		}
+	}
+
+	& .btn-menu {
+		background: 0 0;
+		border-color: transparent;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		position: relative;
+
+		& i {
+			margin-right: -35px;
+			font-size: 14px;
+			color: #fff;
+		}
+
+		&:hover,
+		&:focus {
+			box-shadow: none;
+		}
+
+		&::after {
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: "";
+			transform: rotate(45deg);
+			background: #212121;
+			border-radius: 10px;
+		}
+	}
+
+	& .menu {
+		padding: 20px;
+		color: rgb(179, 179, 179);
+		margin: 0;
+
+		& .item {
+			list-style-type: none;
+			line-height: 28px;
+			font-size: 14px;
+			width: 140px;
+			cursor: pointer;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		& .active {
+			margin-left: -3px;
+
+			&::before {
+				content: "";
+				border-left: 3px solid #1db954;
+				position: relative;
+				left: -18px;
+			}
+		}
+
+		&-header {
+			margin-top: 2rem;
+			font-weight: 300;
+			text-transform: uppercase;
+			font-family: $fontm;
+			font-size: 13px;
+			margin: 0;
+			padding: 0 0 5px;
+			letter-spacing: 1px;
+			color: rgb(179, 179, 179);
+		}
+	}
+}
